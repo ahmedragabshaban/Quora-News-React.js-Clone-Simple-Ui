@@ -21,7 +21,7 @@ import Icon from '../../components/icon';
 import FancyBox from '../../components/fancybox';
 import Tabs from '../../components/tabs';
 // import TextEditor from '../../components/text-editor';
-{/* <TextEditor /> */}
+{/* <TextEditor /> */ }
 
 /**
  * Component
@@ -115,9 +115,10 @@ class Content extends Component {
                             <button className="btn btn-custom-round mr-20" type="button">
                                 <Icon name="link2" />
                             </button>
-                            <button className="btn btn-brand btn-uniform btn-round btn-sm mnt-8 mnb-8" type="button">
-                                <Icon name="plus" />
-                            </button>
+                            <Link className="rui-task-title" to="/task">
+                                <button className="btn btn-brand btn-uniform btn-round btn-sm mnt-8 mnb-8" type="button">
+                                    <Icon name="plus" />
+                                </button></Link>
                         </div>
                     </div>
                     <div className="col-12">
@@ -254,7 +255,7 @@ class Content extends Component {
                                                                 <span>Personal information</span>
                                                             </Link>
                                                         </li>
-                                                       
+
                                                     </ul>
                                                 </div>
                                             </div>
