@@ -329,7 +329,7 @@ class PageNavbar extends Component {
                             <li>
                                 <Link to="/profile" className="nav-link">
                                     <Icon name="plus-circle" />
-                                    <span>Create new Post</span>
+                                    <span>Create new Story</span>
                                     <span className="rui-nav-circle" />
                                 </Link>
                             </li>

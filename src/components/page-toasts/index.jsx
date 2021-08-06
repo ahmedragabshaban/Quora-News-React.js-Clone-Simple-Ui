@@ -48,12 +48,12 @@ class PageToasts extends Component {
         if ( auth.token ) {
             setTimeout( () => {
                 addToast( {
-                    title: 'Welcome to RootUI React',
+                    title: 'Welcome to Ornico',
                     content: (
                         <>
                             Welcome to
                             { ' ' }
-                            <strong>RootUI React</strong>
+                            <strong>Ornico React</strong>
                             { ' ' }
                             admin dashboard. Hope that things are going good for you :)
                         </>

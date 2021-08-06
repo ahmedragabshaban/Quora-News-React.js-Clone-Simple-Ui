@@ -20,7 +20,9 @@ import { userStories } from "../../network/ApiAxios";
 import Icon from '../../components/icon';
 import FancyBox from '../../components/fancybox';
 import Tabs from '../../components/tabs';
-import TextEditor from '../../components/text-editor';
+// import TextEditor from '../../components/text-editor';
+{/* <TextEditor /> */}
+
 /**
  * Component
  */
@@ -106,7 +108,6 @@ class Content extends Component {
 
                     <Fragment>
 
-                        <TextEditor />
                     </Fragment>
                     <div className="col-12">
                         <div className="d-flex align-items-center">
@@ -253,36 +254,7 @@ class Content extends Component {
                                                                 <span>Personal information</span>
                                                             </Link>
                                                         </li>
-                                                        <li>
-                                                            <Link className="nav-link" to="#">
-                                                                <Icon name="user-check" />
-                                                                <span>Account information</span>
-                                                            </Link>
-                                                        </li>
-                                                        <li>
-                                                            <Link className="nav-link" to="#">
-                                                                <Icon name="mail" />
-                                                                <span>Email settings</span>
-                                                            </Link>
-                                                        </li>
-                                                        <li>
-                                                            <Link className="nav-link" to="#">
-                                                                <Icon name="lock" />
-                                                                <span>Security</span>
-                                                            </Link>
-                                                        </li>
-                                                        <li>
-                                                            <Link className="nav-link" to="#">
-                                                                <Icon name="bar-chart2" />
-                                                                <span>Statistics</span>
-                                                            </Link>
-                                                        </li>
-                                                        <li>
-                                                            <Link className="nav-link" to="#">
-                                                                <Icon name="shopping-cart" />
-                                                                <span>Purchases</span>
-                                                            </Link>
-                                                        </li>
+                                                       
                                                     </ul>
                                                 </div>
                                             </div>

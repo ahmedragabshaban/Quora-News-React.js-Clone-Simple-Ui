@@ -31,8 +31,8 @@ class Content extends Component {
                         className="btn btn-danger rui-toast-show"
                         onClick={ () => {
                             addToast( {
-                                title: 'RootUI React',
-                                content: 'Hey, this is a demo notice.',
+                                title: 'Ornico  React',
+                                content: 'Hey, this is a notice.',
                                 time: new Date(),
                                 duration: 8000,
                             } );

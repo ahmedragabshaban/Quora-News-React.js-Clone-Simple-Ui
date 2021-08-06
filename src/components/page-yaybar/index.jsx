@@ -144,17 +144,7 @@ class PageYaybar extends Component {
                     <div className="yay-wrap-menu">
                         <div className="yaybar-wrap">
                             <ul>
-                                <li>
-                                    <a href="../dashboard.html">
-                                        <span
-                                            className="yay-icon"
-                                            dangerouslySetInnerHTML={ { __html: require( '!svg-inline-loader!../../../common-assets/images/logo-html-inherit.svg' ) } }
-                                        />
-                                        <span>Switch to HTML</span>
-                                        <span className="rui-yaybar-circle"></span>
-                                    </a>
-                                </li>
-
+                              
                                 { this.renderSubmenus( settings.navigation_sidebar ) }
 
                                 <li className="yay-label">Sign</li>
@@ -195,7 +185,7 @@ class PageYaybar extends Component {
                                         <li>
                                             <Link to="#" className="nav-link">
                                                 <Icon name="plus-circle" />
-                                                <span>Create new Post</span>
+                                                <span>Create new Story</span>
                                                 <span className="rui-nav-circle" />
                                             </Link>
                                         </li>
