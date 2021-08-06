@@ -8,7 +8,7 @@ import './style.scss';
  */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { getAll } from "../../network/ApiAxios";
+import { getAll, upvoateStory } from "../../network/ApiAxios";
 
 import { Link } from 'react-router-dom';
 import FancyBox from '../../components/fancybox';
@@ -42,6 +42,20 @@ class Content extends Component {
         console.log( this.state.stories, response );
     }
 
+    async upvoateStory( id ) {
+        this.setState( {
+            loading: true,
+        } );
+
+        // eslint-disable-next-line no-console
+        const res = await upvoateStory( id );
+        // eslint-disable-next-line no-console
+        if ( res ) {
+            this.setState( {
+                loading: false,
+            } );
+        }
+    }
     render() {
         const { settings } = this.props;
 
@@ -78,7 +92,7 @@ class Content extends Component {
                                                 </span>
                                                 <img src={ data.image } className="rui-img" alt="" />
                                             </FancyBox>
-                                          
+
                                         </div>
                                     </div>
                                     <Link to="#" className="media-icon">
@@ -89,13 +103,12 @@ class Content extends Component {
                                     <small className="media-subtitle">
                                         { <div dangerouslySetInnerHTML={ { __html: data.body } } /> }
                                     </small>
-                                  
+
                                 </div>
-                                <Button onClick={ () => this.createStory( 1 ) }
+                                <Button onClick={ () => this.upvoateStory( data.id ) }
                                     className="btn-long"
                                     color="brand"
-                                    style={ { marginTop: 8 } }
-
+                                    style={ { marginTop: 10 } }
                                 >
                                     <span className="icon">
                                         <Icon

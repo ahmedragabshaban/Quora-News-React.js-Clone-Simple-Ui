@@ -9,7 +9,6 @@ import Icon from '../../components/icon';
  */
 import TextEditor from '../../components/text-editor';
 import { FormGroup, Label, Input, Button, Spinner } from 'reactstrap';
-// import { FormGroup, InputGroup, InputGroupAddon, InputGroupText, Label, Input } from 'reactstrap';
 import { createStory } from "../../network/ApiAxios";
 import { Redirect } from 'react-router';
 

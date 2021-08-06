@@ -32,6 +32,10 @@ export const createStory = async( title, body, status ) => (
     await instance.post( 'stories/', { title, body, status } )
 );
 
+export const upvoateStory = async( id ) => (
+    await instance.post( 'stories/upvote', { id } )
+);
+
 export const userStories = async() => (
     await instance.get( 'stories/user_story' )
 );
