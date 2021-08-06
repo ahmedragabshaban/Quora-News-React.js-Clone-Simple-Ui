@@ -10,12 +10,7 @@ import { Row, Col } from 'reactstrap';
  * Internal Dependencies
  */
 import Carousel from './components/carousel';
-import WidgetMemory from './components/widget-memory';
-import WidgetDisc from './components/widget-disc';
-import WidgetCPU from './components/widget-cpu';
-import WidgetTasks from './components/widget-tasks';
-import WidgetUploads from './components/widget-uploads';
-import WidgetActivity from './components/widget-activity';
+
 import Map from './components/map';
 import WidgetCountries from './components/widget-countries';
 
@@ -140,41 +135,10 @@ class Content extends Component {
 
                 { /* Latest Actions */ }
                 <div className="rui-gap-2" />
-                <Row className="vertical-gap">
-                    <Col lg="4">
-                        <WidgetTasks />
-                    </Col>
-                    <Col lg="4">
-                        <WidgetUploads />
-                    </Col>
-                    <Col lg="4">
-                        <WidgetActivity />
-                    </Col>
-                </Row>
-
+           
                 { /* Server Data */ }
                 <div className="rui-gap-2" />
-                <Row className="vertical-gap">
-                    <Col lg="4">
-                        <WidgetMemory
-                            getChartjsData={ this.getChartjsData }
-                            getChartjsOptions={ this.getChartjsOptions }
-                        />
-                    </Col>
-                    <Col lg="4">
-                        <WidgetDisc
-                            getChartjsData={ this.getChartjsData }
-                            getChartjsOptions={ this.getChartjsOptions }
-                        />
-                    </Col>
-                    <Col lg="4">
-                        <WidgetCPU
-                            getChartjsData={ this.getChartjsData }
-                            getChartjsOptions={ this.getChartjsOptions }
-                        />
-                    </Col>
-                </Row>
-
+                
                 { /* Earnings by countries and map */ }
                 <div className="rui-gap-3" />
                 <h2>Earnings by Countries</h2>

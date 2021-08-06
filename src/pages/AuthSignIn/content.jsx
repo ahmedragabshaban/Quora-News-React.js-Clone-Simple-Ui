@@ -80,7 +80,6 @@ class Content extends Component {
         if ( ! isValid ) {
             return;
         }
-
         this.setState( {
             loading: true,
         }, async() => {

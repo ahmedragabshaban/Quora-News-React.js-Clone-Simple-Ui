@@ -28,7 +28,7 @@ export const getAll = async() => (
 );
 
 export const register = async( name, email, password ) => (
-    await instance.post( 'auth/register', { name, email, password } )
+    await instance.post( 'auth/signup', { name, email, password } )
 );
 
 export const login = async( email, password ) => (

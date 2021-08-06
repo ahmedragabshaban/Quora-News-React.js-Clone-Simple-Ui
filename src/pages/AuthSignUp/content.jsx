@@ -6,6 +6,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Spinner } from 'reactstrap';
+import { register } from "../../network/ApiAxios";
 
 /**
  * Internal Dependencies
@@ -117,12 +118,20 @@ class Content extends Component {
 
         this.setState( {
             loading: true,
-        }, () => {
-            setTimeout( () => {
+        }, async() => {
+            const response = await register( this.state.name, this.state.email, this.state.password );
+            const { data } = response;
+            // eslint-disable-next-line no-console
+            console.log( data );
+            if ( data.user ) {
+                // eslint-disable-next-line no-undef
+                localStorage.setItem( "token", data.token );
+                // eslint-disable-next-line no-undef
+                localStorage.setItem( "user", JSON.stringify( data.user ) );
                 updateAuth( {
-                    token: 'fake-token',
+                    token: data.token,
                 } );
-            }, 600 );
+            }
         } );
     }
 
