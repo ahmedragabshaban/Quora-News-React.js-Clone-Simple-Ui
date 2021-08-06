@@ -50,7 +50,9 @@ class Content extends Component {
         // eslint-disable-next-line no-console
         const res = await upvoateStory( id );
         // eslint-disable-next-line no-console
-        if ( res ) {
+        console.log( res );
+        if ( res.status === 200 || res.status === 201 ) {
+            this.componentDidMount();
             this.setState( {
                 loading: false,
             } );
