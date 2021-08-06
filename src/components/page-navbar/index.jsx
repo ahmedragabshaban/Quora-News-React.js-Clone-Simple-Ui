@@ -334,20 +334,6 @@ class PageNavbar extends Component {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/profile" className="nav-link">
-                                    <Icon name="users" />
-                                    <span>Manage Users</span>
-                                    <span className="rui-nav-circle" />
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/profile" className="nav-link">
-                                    <Icon name="check-circle" />
-                                    <span>Check Updates</span>
-                                    <span className="rui-nav-circle" />
-                                </Link>
-                            </li>
-                            <li>
                                 <Link
                                     to="#"
                                     className="nav-link"
@@ -594,17 +580,11 @@ class PageNavbar extends Component {
                                 <li>
                                     <Link to="/profile" className="nav-link">
                                         <Icon name="plus-circle" />
-                                        <span>Create new Post</span>
+                                        <span>Create new Story</span>
                                         <span className="rui-nav-circle" />
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link to="/profile" className="nav-link">
-                                        <Icon name="users" />
-                                        <span>Manage Users</span>
-                                        <span className="rui-nav-circle" />
-                                    </Link>
-                                </li>
+
                                 <li>
                                     <Link to="/profile" className="nav-link">
                                         <Icon name="check-circle" />
@@ -652,7 +632,7 @@ class PageNavbar extends Component {
                             mobileMenuShow: ! mobileMenuShow,
                         } );
                     } }
-                    onKeyUp={ () => {} }
+                    onKeyUp={ () => { } }
                     role="button"
                     tabIndex={ 0 }
                 />

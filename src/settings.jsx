@@ -34,10 +34,7 @@ const settings = {
                     name: 'Create Page',
                     icon: 'plus-circle',
                 },
-                '#manage-users': {
-                    name: 'Manage Users',
-                    icon: 'users',
-                },
+              
                 '#manage-sites': {
                     name: 'Manage Sites',
                     icon: 'sidebar',

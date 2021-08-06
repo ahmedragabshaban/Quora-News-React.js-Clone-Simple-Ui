@@ -63,7 +63,7 @@ class Content extends Component {
         return isValid;
     }
 
-    maybeLogin() {
+    async maybeLogin() {
         const {
             updateAuth,
         } = this.props;
@@ -82,19 +82,22 @@ class Content extends Component {
         }
         this.setState( {
             loading: true,
-        }, async() => {
-            const response = await login( this.state.email, this.state.password );
-            const { data } = response;
-            if ( data.user ) {
-                // eslint-disable-next-line no-undef
-                localStorage.setItem( "token", data.token );
-                // eslint-disable-next-line no-undef
-                localStorage.setItem( "user", JSON.stringify( data.user ) );
-                updateAuth( {
-                    token: data.token,
-                } );
-            }
         } );
+
+        const response = await login( this.state.email, this.state.password );
+        const { data } = response;
+        if ( data.user ) {
+            window.localStorage.setItem( "user", JSON.stringify( data.user ) );
+            window.localStorage.setItem( "token", JSON.stringify( data.token ) );
+
+            updateAuth( {
+                token: data.token,
+            } );
+        } else {
+            this.setState( {
+                loading: false,
+            } );
+        }
     }
 
     render() {
