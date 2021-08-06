@@ -25,7 +25,11 @@ instance.interceptors.request.use( async( config ) => {
 } );
 
 export const getAll = async() => (
-    await instance.post( 'stories/' )
+    await instance.get( 'stories/' )
+);
+
+export const createStory = async( title, body, status ) => (
+    await instance.post( 'stories', { title, body, status } )
 );
 
 export const userStories = async() => (

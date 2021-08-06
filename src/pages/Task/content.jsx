@@ -8,13 +8,33 @@ import Icon from '../../components/icon';
  * Internal Dependencies
  */
 import TextEditor from '../../components/text-editor';
-import { FormGroup, Label, Input, Button } from 'reactstrap';
+import { FormGroup, Label, Input, Button, Spinner } from 'reactstrap';
 // import { FormGroup, InputGroup, InputGroupAddon, InputGroupText, Label, Input } from 'reactstrap';
+import { createStory } from "../../network/ApiAxios";
 
 class Content extends Component {
     state = {
         title: '',
-        show: '',
+        body: '',
+        status: 0,
+    }
+
+    async createStory( status ) {
+        this.setState( {
+            loading: true,
+            status: status,
+        } );
+        // eslint-disable-next-line no-console
+        const response = await createStory( this.state.title, this.state.body, status );
+        const { res } = response;
+        if ( res ) {
+            // eslint-disable-next-line no-console
+            console.log( res );
+        } else {
+            this.setState( {
+                loading: true,
+            } );
+        }
     }
 
     titleHandleChange = ( e ) => {
@@ -22,7 +42,7 @@ class Content extends Component {
     }
 
     bodyHandleChange = ( e ) => {
-        this.setState( { body: e.target.value } );
+        this.setState( { body: e } );
     }
 
     submit = () => {
@@ -55,7 +75,7 @@ class Content extends Component {
                 </div>
 
                 <div style={ { float: 'right' } }>
-                    <Button
+                    <Button onClick={ () => this.createStory( 0 ) }
                         className="btn-long"
                         color="brand"
                     >
@@ -68,10 +88,12 @@ class Content extends Component {
                                 vendor="fa"
                             /></span>
                         <span className="text">
-                            Save
+                            Save    { this.state.loading && this.state.status === 0 ? (
+                                <Spinner />
+                            ) : '' }
                         </span>
                     </Button>
-                    <Button
+                    <Button onClick={ () => this.createStory( 1 ) }
                         className="btn-long"
                         color="brand"
                         style={ { marginLeft: 15 } }
@@ -86,10 +108,12 @@ class Content extends Component {
                             />
                         </span>
                         <span className="text">
-                            Publish
+                            Publish    { this.state.loading && this.state.status === 1 ? (
+                                <Spinner />
+                            ) : '' }
                         </span>
                     </Button>
-
+                    { /* <i class="fas fa-arrow-alt-circle-up"></i> */ }
                 </div>
 
             </Fragment >
