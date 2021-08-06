@@ -116,7 +116,7 @@ class Content extends Component {
                     icon: 'check-circle',
                     color: 'danger',
                     url: '/task',
-                    label: 'The problem with the Media object',
+                    label: 'New Story',
                     by: (
                         <>
                             #10 closed on 12 Mar by

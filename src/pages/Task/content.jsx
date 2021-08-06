@@ -11,12 +11,14 @@ import TextEditor from '../../components/text-editor';
 import { FormGroup, Label, Input, Button, Spinner } from 'reactstrap';
 // import { FormGroup, InputGroup, InputGroupAddon, InputGroupText, Label, Input } from 'reactstrap';
 import { createStory } from "../../network/ApiAxios";
+import { Redirect } from 'react-router';
 
 class Content extends Component {
     state = {
         title: '',
         body: '',
         status: 0,
+        navigate: false,
     }
 
     async createStory( status ) {
@@ -24,15 +26,14 @@ class Content extends Component {
             loading: true,
             status: status,
         } );
+
         // eslint-disable-next-line no-console
-        const response = await createStory( this.state.title, this.state.body, status );
-        const { res } = response;
+        const res = await createStory( this.state.title, this.state.body, status );
+        // eslint-disable-next-line no-console
         if ( res ) {
-            // eslint-disable-next-line no-console
-            console.log( res );
-        } else {
             this.setState( {
-                loading: true,
+                loading: false,
+                navigate: true,
             } );
         }
     }
@@ -50,8 +51,12 @@ class Content extends Component {
     }
 
     render() {
-        // const { settings } = this.props;
+        const { navigate } = this.state;
 
+        // here is the important part
+        if ( navigate ) {
+            return <Redirect to="/" push={ true } />;
+        }
         return (
             <Fragment>
 

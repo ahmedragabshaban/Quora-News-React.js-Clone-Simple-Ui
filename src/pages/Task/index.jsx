@@ -28,7 +28,7 @@ class TaskPage extends Component {
                         '/project-management': 'Project Management',
                     } }
                 >
-                    <h1>The problem with the Media object</h1>
+                    <h1>New Story</h1>
                 </PageTitle>
                 <PageContent>
                     <AsyncComponent component={ () => import( './content' ) } />

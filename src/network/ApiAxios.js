@@ -29,7 +29,7 @@ export const getAll = async() => (
 );
 
 export const createStory = async( title, body, status ) => (
-    await instance.post( 'stories', { title, body, status } )
+    await instance.post( 'stories/', { title, body, status } )
 );
 
 export const userStories = async() => (
