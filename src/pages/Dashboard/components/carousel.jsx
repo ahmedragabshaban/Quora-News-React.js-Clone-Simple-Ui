@@ -84,8 +84,8 @@ class Carousel extends Component {
                     <div className="swiper-slide">
                         <div className="rui-widget rui-widget-chart">
                             <div className="rui-widget-chart-info">
-                                <div className="rui-widget-title h2">+14%</div>
-                                <small className="rui-widget-subtitle">Users Today</small>
+                                <div className="rui-widget-title h2">5</div>
+                                <small className="rui-widget-subtitle">Users</small>
                             </div>
                             <div className="rui-chartjs-container">
                                 <Chartist
@@ -98,28 +98,12 @@ class Carousel extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="swiper-slide">
-                        <div className="rui-widget rui-widget-chart">
-                            <div className="rui-widget-chart-info">
-                                <div className="rui-widget-title h2">+10%</div>
-                                <small className="rui-widget-subtitle">Session</small>
-                            </div>
-                            <div className="rui-chartjs-container">
-                                <Chartist
-                                    className="rui-chartist rui-chartist-donut"
-                                    data={ {
-                                        series: [ 5, 5 ],
-                                    } }
-                                    { ...getChartistOptions() }
-                                />
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div className="swiper-slide rui-swiper-slide-total">
                         <div className="rui-widget rui-widget-chart rui-widget-total">
                             <div className="rui-widget-chart-info">
-                                <div className="rui-widget-title h1">$1371.24</div>
-                                <small className="rui-widget-subtitle">Total Income</small>
+                                <div className="rui-widget-title h1">5</div>
+                                <small className="rui-widget-subtitle">Total Stories</small>
                             </div>
                             <div className="rui-widget-total-chart">
                                 <Line
@@ -131,40 +115,7 @@ class Carousel extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="swiper-slide">
-                        <div className="rui-widget rui-widget-chart">
-                            <div className="rui-widget-chart-info">
-                                <div className="rui-widget-title h2">25%</div>
-                                <small className="rui-widget-subtitle">Bounce Rate</small>
-                            </div>
-                            <div className="rui-chartjs-container">
-                                <Chartist
-                                    className="rui-chartist rui-chartist-donut"
-                                    data={ {
-                                        series: [ 5, 2 ],
-                                    } }
-                                    { ...getChartistOptions() }
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="swiper-slide">
-                        <div className="rui-widget rui-widget-chart">
-                            <div className="rui-widget-chart-info">
-                                <div className="rui-widget-title h2">-12%</div>
-                                <small className="rui-widget-subtitle">Sales Today</small>
-                            </div>
-                            <div className="rui-chartjs-container">
-                                <Chartist
-                                    className="rui-chartist rui-chartist-donut"
-                                    data={ {
-                                        series: [ 2, 8 ],
-                                    } }
-                                    { ...getChartistOptions() }
-                                />
-                            </div>
-                        </div>
-                    </div>
+                   
                 </Swiper>
                 <div
                     className="swiper-button-next"

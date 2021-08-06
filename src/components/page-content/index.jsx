@@ -137,7 +137,7 @@ class PageContent extends Component {
                 </div>
                 <footer className="rui-footer">
                     <Container fluid>
-                        <p className="mb-0">2020 © Design by Dexad and nK.</p>
+                        <p className="mb-0">2021</p>
                     </Container>
                 </footer>
             </>

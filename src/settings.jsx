@@ -64,11 +64,6 @@ const settings = {
         },
 
         // Apps
-        '/mailbox': {
-            label: 'Apps',
-            name: 'Mailbox',
-            icon: 'send',
-        },
         '/messenger': {
             name: 'Messenger',
             icon: 'message-circle',

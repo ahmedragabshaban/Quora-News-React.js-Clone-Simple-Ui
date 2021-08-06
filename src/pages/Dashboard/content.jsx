@@ -139,9 +139,9 @@ class Content extends Component {
                 { /* Server Data */ }
                 <div className="rui-gap-2" />
                 
-                { /* Earnings by countries and map */ }
+                { /* View by countries and map */ }
                 <div className="rui-gap-3" />
-                <h2>Earnings by Countries</h2>
+                <h2>Views by Countries</h2>
                 <Row className="vertical-gap">
                     <Col lg="8">
                         <Map />
