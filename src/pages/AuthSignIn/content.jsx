@@ -6,11 +6,11 @@ import classnames from 'classnames/dedupe';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Spinner } from 'reactstrap';
+import { login } from "../../network/ApiAxios";
 
 /**
  * Internal Dependencies
  */
-import Icon from '../../components/icon';
 import { isValidEmail } from '../../utils';
 
 import { updateAuth as actionUpdateAuth } from '../../actions';
@@ -83,12 +83,20 @@ class Content extends Component {
 
         this.setState( {
             loading: true,
-        }, () => {
-            setTimeout( () => {
+        }, async() => {
+            const response = await login( this.state.email, this.state.password );
+            const { data } = response;
+            // eslint-disable-next-line no-console
+            console.log( "data", data );
+            if ( data.success ) {
+                // eslint-disable-next-line no-undef
+                localStorage.setItem( "token", data.token );
+                // eslint-disable-next-line no-undef
+                localStorage.setItem( "user", JSON.stringify( data.user ) );
                 updateAuth( {
                     token: 'fake-token',
                 } );
-            }, 600 );
+            }
         } );
     }
 
@@ -120,7 +128,7 @@ class Content extends Component {
                                 onChange={ ( e ) => {
                                     this.setState( {
                                         email: e.target.value,
-                                    }, emailError ? this.checkEmail : () => {} );
+                                    }, emailError ? this.checkEmail : () => { } );
                                 } }
                                 onBlur={ this.checkEmail }
                                 disabled={ this.state.loading }
@@ -138,7 +146,7 @@ class Content extends Component {
                                 onChange={ ( e ) => {
                                     this.setState( {
                                         password: e.target.value,
-                                    }, passwordError ? this.checkPassword : () => {} );
+                                    }, passwordError ? this.checkPassword : () => { } );
                                 } }
                                 onBlur={ this.checkPassword }
                                 disabled={ this.state.loading }
@@ -175,43 +183,7 @@ class Content extends Component {
                                 ) : '' }
                             </button>
                         </div>
-                        <div className="col-12">
-                            <div className="rui-sign-or mt-2 mb-5">or</div>
-                        </div>
-                        <div className="col-12">
-                            <ul className="rui-social-links">
-                                <li>
-                                    <button
-                                        className="rui-social-github"
-                                        onClick={ this.maybeLogin }
-                                        disabled={ this.state.loading }
-                                    >
-                                        <Icon vendor="fa" name={ [ 'fab', 'github' ] } />
-                                        Github
-                                    </button>
-                                </li>
-                                <li>
-                                    <button
-                                        className="rui-social-facebook"
-                                        onClick={ this.maybeLogin }
-                                        disabled={ this.state.loading }
-                                    >
-                                        <Icon vendor="fa" name={ [ 'fab', 'facebook-f' ] } />
-                                        Facebook
-                                    </button>
-                                </li>
-                                <li>
-                                    <button
-                                        className="rui-social-google"
-                                        onClick={ this.maybeLogin }
-                                        disabled={ this.state.loading }
-                                    >
-                                        <Icon vendor="fa" name={ [ 'fab', 'google' ] } />
-                                        Google
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
                 <div className="mt-20 text-grey-5">
