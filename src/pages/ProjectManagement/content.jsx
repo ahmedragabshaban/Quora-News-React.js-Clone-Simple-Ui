@@ -120,7 +120,7 @@ class Content extends Component {
                                         />
                                     </span>
                                     <span className="text">
-                                        Upvote    { this.state.loading && this.state.status === 1 ? (
+                                        { data.votes }     Upvote    { this.state.loading && this.state.status === 1 ? (
                                             <Spinner />
                                         ) : '' }
                                     </span>
