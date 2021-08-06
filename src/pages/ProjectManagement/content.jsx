@@ -12,6 +12,7 @@ import { getAll } from "../../network/ApiAxios";
 
 import { Link } from 'react-router-dom';
 import FancyBox from '../../components/fancybox';
+import { Button, Spinner } from 'reactstrap';
 
 /**
  * Internal Dependencies
@@ -77,7 +78,7 @@ class Content extends Component {
                                                 </span>
                                                 <img src={ data.image } className="rui-img" alt="" />
                                             </FancyBox>
-
+                                          
                                         </div>
                                     </div>
                                     <Link to="#" className="media-icon">
@@ -88,8 +89,29 @@ class Content extends Component {
                                     <small className="media-subtitle">
                                         { <div dangerouslySetInnerHTML={ { __html: data.body } } /> }
                                     </small>
-
+                                  
                                 </div>
+                                <Button onClick={ () => this.createStory( 1 ) }
+                                    className="btn-long"
+                                    color="brand"
+                                    style={ { marginTop: 8 } }
+
+                                >
+                                    <span className="icon">
+                                        <Icon
+                                            name={ [
+                                                'fas',
+                                                'arrow-alt-circle-up',
+                                            ] }
+                                            vendor="fa"
+                                        />
+                                    </span>
+                                    <span className="text">
+                                        Upvote    { this.state.loading && this.state.status === 1 ? (
+                                            <Spinner />
+                                        ) : '' }
+                                    </span>
+                                </Button>
                             </li> )
 
                         ) )

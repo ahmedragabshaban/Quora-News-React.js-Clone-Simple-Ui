@@ -118,7 +118,6 @@ class Content extends Component {
                             ) : '' }
                         </span>
                     </Button>
-                    { /* <i class="fas fa-arrow-alt-circle-up"></i> */ }
                 </div>
 
             </Fragment >
