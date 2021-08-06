@@ -13,8 +13,6 @@ import {
     Label, Input,
 } from 'reactstrap';
 import { userStories } from "../../network/ApiAxios";
-import createDOMPurify from 'dompurify';
-import { JSDOM } from 'jsdom';
 
 /**
  * Internal Dependencies
@@ -58,9 +56,6 @@ class Content extends Component {
     }
 
     render() {
-        const window = ( new JSDOM( '' ) ).window;
-        const DOMPurify = createDOMPurify( window );
-
         const {
             activeTab,
         } = this.state;
@@ -190,7 +185,7 @@ class Content extends Component {
                                                 </Link>
 
                                                 <small className="media-subtitle">
-                                                    { <div dangerouslySetInnerHTML={ { __html: DOMPurify.sanitize( data.body ) } } /> }
+                                                    { <div dangerouslySetInnerHTML={ { __html: data.body } } /> }
                                                 </small>
 
                                             </div>
@@ -240,7 +235,7 @@ class Content extends Component {
                                                 </Link>
 
                                                 <small className="media-subtitle">
-                                                    { <div dangerouslySetInnerHTML={ { __html: DOMPurify.sanitize( data.body ) } } /> }
+                                                    { <div dangerouslySetInnerHTML={ { __html: data.body } } /> }
                                                 </small>
                                             </div>
                                         </li> )

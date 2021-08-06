@@ -21,13 +21,13 @@ class ProjectManagementPage extends Component {
                 <PageTitle
                     breadcrumbs={ {
                         '/': 'Home',
-                        '/project-management': {
+                        '/stories': {
                             title: 'Apps',
                             sub: 'apps',
                         },
                     } }
                 >
-                    <h1>Project Management</h1>
+                    <h1>Stories</h1>
                 </PageTitle>
                 <PageContent>
                     <AsyncComponent component={ () => import( './content' ) } />

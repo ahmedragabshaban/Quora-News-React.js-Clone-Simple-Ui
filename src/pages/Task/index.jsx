@@ -25,7 +25,7 @@ class TaskPage extends Component {
                             title: 'Apps',
                             sub: 'apps',
                         },
-                        '/project-management': 'Project Management',
+                        '/stories': 'Project Management',
                     } }
                 >
                     <h1>New Story</h1>

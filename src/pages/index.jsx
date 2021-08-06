@@ -80,7 +80,7 @@ export default {
     '/mailbox': Mailbox,
     '/messenger': Messenger,
     '/calendar': Calendar,
-    '/project-management': ProjectManagement,
+    '/stories': ProjectManagement,
     '/task': Task,
     '/file-manager': FileManager,
     '/profile': Profile,

@@ -34,7 +34,7 @@ const settings = {
                     name: 'Create Page',
                     icon: 'plus-circle',
                 },
-              
+
                 '#manage-sites': {
                     name: 'Manage Sites',
                     icon: 'sidebar',
@@ -60,213 +60,23 @@ const settings = {
             icon: 'home',
         },
 
-        // Apps
-        '/messenger': {
-            name: 'Messenger',
-            icon: 'message-circle',
-        },
-        '/calendar': {
-            name: 'Calendar',
-            icon: 'calendar',
-        },
-        '/project-management': {
-            name: 'Project Management',
+        '/stories': {
+            name: 'Stories',
             icon: 'book',
         },
-        '/file-manager': {
-            name: 'File Manager',
-            icon: 'file',
-        },
+
         '/profile': {
             name: 'Profile',
             icon: 'user',
         },
 
-        // Content
-        '/grid': {
-            label: 'Content',
-            name: 'Grid',
-            icon: 'grid',
-        },
-        '/colors': {
-            name: 'Colors',
-            icon: 'droplet',
-        },
-        '/typography': {
-            name: 'Typography',
-            icon: 'bold',
-        },
-        '/component-table': {
-            name: 'Tables',
-            icon: 'menu',
-        },
-
-        // Components Base
-        '/component-alert': {
-            label: 'Components',
-            name: 'Base',
-            icon: 'layers',
-            sub: {
-                '/component-alert': {
-                    name: 'Alert',
-                },
-                '/component-badge': {
-                    name: 'Badge',
-                },
-                '/component-breadcrumbs': {
-                    name: 'Breadcrumbs',
-                },
-                '/component-button': {
-                    name: 'Button',
-                },
-                '/component-card': {
-                    name: 'Card',
-                },
-                '/component-carousel': {
-                    name: 'Carousel',
-                },
-                '/component-collapse': {
-                    name: 'Collapse',
-                },
-                '/component-dropdown': {
-                    name: 'Dropdown',
-                },
-                '/component-list-group': {
-                    name: 'List Group',
-                },
-                '/component-media-object': {
-                    name: 'Media Object',
-                },
-                '/component-modal': {
-                    name: 'Modal',
-                },
-                '/component-nav': {
-                    name: 'Nav',
-                },
-                '/component-pagination': {
-                    name: 'Pagination',
-                },
-                '/component-popover': {
-                    name: 'Popover',
-                },
-                '/component-progress': {
-                    name: 'Progress',
-                },
-                '/component-spinner': {
-                    name: 'Spinner',
-                },
-                '/component-tabs': {
-                    name: 'Tabs',
-                },
-            },
-        },
-
-        // Components Advanced.
-        '/component-icons-feather': {
-            name: 'Advanced',
-            icon: 'box',
-            sub: {
-                '/component-icons-feather': {
-                    name: 'Icons',
-                    sub: {
-                        '/component-icons-feather': {
-                            name: 'Feather',
-                        },
-                        '/component-icons-fontawesome': {
-                            name: 'Font Awesome',
-                        },
-                    },
-                },
-                '/component-charts-chartjs': {
-                    name: 'Charts',
-                    sub: {
-                        '/component-charts-chartjs': {
-                            name: 'Chart.js',
-                        },
-                        '/component-charts-chartist': {
-                            name: 'Chartist',
-                        },
-                        '/component-charts-peity': {
-                            name: 'Peity',
-                        },
-                        '/component-charts-echarts': {
-                            name: 'eCharts',
-                        },
-                        '/component-charts-flot': {
-                            name: 'Flot',
-                        },
-                    },
-                },
-                '/component-timeline': {
-                    name: 'Timeline',
-                },
-                '/component-tree-view': {
-                    name: 'Tree View',
-                },
-                '/component-toast': {
-                    name: 'Toast',
-                },
-                '/component-sweet-alert': {
-                    name: 'Sweet Alert',
-                },
-                '/component-maps': {
-                    name: 'Maps',
-                },
-                '/component-data-tables': {
-                    name: 'Data Tables',
-                },
-            },
-        },
-
-        // Forms.
-        '/forms-base': {
-            label: 'Forms',
-            name: 'Base',
-            icon: 'mail',
-        },
-        '/forms-datetime': {
-            name: 'Advanced',
-            icon: 'database',
-            sub: {
-                '/forms-datetime': {
-                    name: 'DateTime Picker',
-                },
-                '/forms-validation': {
-                    name: 'Validation',
-                },
-                '/forms-touch-spin': {
-                    name: 'Touch Spin',
-                },
-                '/forms-range-slider': {
-                    name: 'Range Slider',
-                },
-                '/forms-input-masks': {
-                    name: 'Input Masks',
-                },
-                '/forms-dropzone': {
-                    name: 'Dropzone',
-                },
-                '/forms-colorpicker': {
-                    name: 'Color Picker',
-                },
-                '/forms-select': {
-                    name: 'Select',
-                },
-                '/forms-markdown': {
-                    name: 'Markdown editor',
-                },
-                '/forms-wysiwyg': {
-                    name: 'WYSIWYG editor',
-                },
-            },
-        },
     },
     breadcrumbs_presets: {
         apps: {
             '/mailbox': 'Mailbox',
             '/messenger': 'Messenger',
             '/calendar': 'Calendar',
-            '/project-management': 'Project Management',
+            '/stories': 'Project Management',
             '/file-manager': 'File Manager',
             '/profile': 'Profile',
         },
@@ -415,7 +225,7 @@ Object.keys( $_GET ).forEach( ( name ) => {
     case 'setting-nav-dark':
         settings.nav_dark = isTrue;
         break;
-    // no default
+        // no default
     }
 } );
 
