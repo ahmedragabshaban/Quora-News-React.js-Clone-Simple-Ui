@@ -23,9 +23,9 @@ class Content extends Component {
         super( props );
 
         this.state = {
-            email: 'admin@demo.com',
+            email: 'test@ornico.com',
             emailError: '',
-            password: 'demopass',
+            password: '123456',
             passwordError: '',
             loading: false,
         };
@@ -86,15 +86,13 @@ class Content extends Component {
         }, async() => {
             const response = await login( this.state.email, this.state.password );
             const { data } = response;
-            // eslint-disable-next-line no-console
-            console.log( "data", data );
-            if ( data.success ) {
+            if ( data.user ) {
                 // eslint-disable-next-line no-undef
                 localStorage.setItem( "token", data.token );
                 // eslint-disable-next-line no-undef
                 localStorage.setItem( "user", JSON.stringify( data.user ) );
                 updateAuth( {
-                    token: 'fake-token',
+                    token: data.token,
                 } );
             }
         } );

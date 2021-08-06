@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import config from "../config";
 
@@ -14,9 +15,11 @@ const instance = axios.create( {
 // eslint-disable-next-line no-shadow
 instance.interceptors.request.use( async( config ) => {
     // eslint-disable-next-line no-undef
-    const token = localStorage.getItem( 'token' );
-    config.headers.Authorization = ( token ? token : '' );
-    config.headers.ContentType = 'application/json';
+    // const token = localStorage.getItem( 'token' );
+    // config.headers.Authorization = `Bearer ${ ( token ? token : '' ) }`;
+    config.headers.ContentType = 'application/json;charset=UTF-8';
+    // config.headers.AccessControlAllowOrigin = '*';
+    
     return config;
 } );
 
@@ -29,7 +32,9 @@ export const register = async( name, email, password ) => (
 );
 
 export const login = async( email, password ) => (
-    await instance.post( 'auth/login', { email, password } )
+    await instance.post( 'auth/login', {
+        email, password,
+    } )
 );
 
 export const edit = async( userID, name, email ) => (
