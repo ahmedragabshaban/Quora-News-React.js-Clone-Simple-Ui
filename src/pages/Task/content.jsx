@@ -10,10 +10,25 @@ import Icon from '../../components/icon';
 import TextEditor from '../../components/text-editor';
 import { FormGroup, Label, Input, Button } from 'reactstrap';
 // import { FormGroup, InputGroup, InputGroupAddon, InputGroupText, Label, Input } from 'reactstrap';
-/**
- * Component
- */
+
 class Content extends Component {
+    state = {
+        title: '',
+        show: '',
+    }
+
+    titleHandleChange = ( e ) => {
+        this.setState( { title: e.target.value } );
+    }
+
+    bodyHandleChange = ( e ) => {
+        this.setState( { body: e.target.value } );
+    }
+
+    submit = () => {
+        this.setState( { show: this.state.value } );
+    }
+
     render() {
         // const { settings } = this.props;
 
@@ -31,12 +46,12 @@ class Content extends Component {
                             name="text"
                             placeholder="Title"
                             type="text"
-                        />
+                            value={ this.state.title } onChange={ this.titleHandleChange } />
                     </FormGroup>
                 </div>
 
                 <div className="row" style={ { width: '100%' } }>
-                    <TextEditor />
+                    <TextEditor value={ this.state.body } onChange={ this.bodyHandleChange } />
                 </div>
 
                 <div style={ { float: 'right' } }>
